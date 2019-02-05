@@ -11,7 +11,7 @@ const mutations= {
     state.today.one.wind= Math.trunc(payload.wind.speed*3.6);
     state.today.one.description=payload.weather[0].description;
     state.today.one.humidity=payload.main.humidity;
-
+    state.today.one.clouds=payload.clouds.all+"%";
  },
 [types.weather.setForecastWeather]: (state,payload) => {
     let now = moment();
@@ -22,6 +22,7 @@ const mutations= {
     state.today.two.wind=Math.trunc(payload[0].wind.speed*3.6);
     state.today.two.description=payload[0].weather[0].description;
     state.today.two.humidity=payload[0].main.humidity;
+    state.today.two.clouds=payload[0].clouds.all+"%";
 
     now.add("3","h");
     state.today.three.time=now.hour()+":00";
@@ -30,6 +31,7 @@ const mutations= {
     state.today.three.wind=Math.trunc(payload[0].wind.speed*3.6);
     state.today.three.description=payload[1].weather[0].description
     state.today.three.humidity=payload[1].main.humidity;
+    state.today.three.clouds=payload[1].clouds.all+"%";
  },
 };
 

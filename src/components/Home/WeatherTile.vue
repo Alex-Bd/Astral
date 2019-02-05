@@ -32,6 +32,10 @@
               <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
               {{today.one.humidity}}
             </div>
+ <div align="center" class="col">
+              <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
+              {{today.one.clouds}}
+            </div>
 
         </div>
       </div>
@@ -65,6 +69,11 @@
             <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
             {{today.two.humidity}}
           </div>
+          <div align="center" class="col">
+            <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
+            {{today.two.clouds}}
+          </div>
+
         </div>
       </div>
       <div class="col">
@@ -95,7 +104,10 @@
             <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
             {{today.three.humidity}}
           </div>
-
+          <div align="center" class="col">
+            <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
+            {{today.three.clouds}}
+          </div>
         </div>
       </div>
     </div>

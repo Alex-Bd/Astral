@@ -8,19 +8,22 @@ const state = {
   today:{
     one:{
       time:"",
-      temp:"",
+      temp:0,
       cond:"",
-      wind:""
+      wind:"",
+      description:""
   },two:{
       time:"",
-      temp:"",
+      temp:0,
       cond:"",
-      wind:""
+      wind:"",
+      description:""
   },three:{
       time:"",
-      temp:"",
+      temp:0,
       cond:"",
-      wind:""
+      wind:"",
+      description:""
   }},
   weekly: []
 

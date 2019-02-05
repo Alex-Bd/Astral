@@ -74,8 +74,10 @@
     //Getters
     getDailyWeather: "weather/getDailyWeather",
     //Mutations
-    setDailyWeather: "weather/setDailyWeather",
-    //Actions
+    setCurrentWeather: "weather/setCurrentWeather",
+    setForecastWeather: "weather/setForecastWeather",
+
+     //Actions
     updateDailyWeather: "weather/updateDailyWeather"
 
    }

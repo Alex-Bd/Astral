@@ -11,20 +11,23 @@
 
         <div class="row justify-center">
           <div class="col">
-            <q-icon :name= "today.one.cond"  color="white" size="8vh"></q-icon>
+            <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
             <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <div>smtg</div>
+            <div>{{today.one.description}}</div>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <div>smtg</div>
+            <div>
+              <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
+              {{today.one.wind}}
+            </div>
           </div>
         </div>
       </div>
@@ -45,13 +48,14 @@
 
         <div class="row">
           <div class="col">
-            <div>smtg</div>
+            <div>{{today.two.description}}</div>
           </div>
         </div>
 
         <div class="row">
           <div class="col">
-            <div>smtg</div>
+            <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
+            {{today.two.wind}}
           </div>
         </div>
       </div>
@@ -71,15 +75,18 @@
 
         <div class="row">
           <div class="col">
-            <div>smtg</div>
+            <div>{{today.three.description}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
+            {{today.three.wind}}
           </div>
         </div>
 
-        <div class="row">
-          <div class="col">
-            <div>smtg</div>
-          </div>
-        </div>
+
+
       </div>
 
       </div>

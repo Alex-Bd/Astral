@@ -15,7 +15,7 @@ const mutations= {
  },
 [types.weather.setForecastWeather]: (state,payload) => {
    console.log("called")
-    let now = moment()
+    let now = moment();
     now.add("3","h")
     state.today.two.time=now.hour()+":00";
     state.today.two.temp=payload[0].main.temp

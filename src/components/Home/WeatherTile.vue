@@ -1,7 +1,6 @@
 <template>
   <div class="doc-container">
-    <div class="row">
-
+    <div class="row slot items-center">
       <div class="col">
         <div class="row">
           <div class="col ">
@@ -84,11 +83,7 @@
             {{today.three.wind}}
           </div>
         </div>
-
-
-
       </div>
-
     </div>
   </div>
 </template>

@@ -27,7 +27,7 @@ const state = {
   }},
   weekly: []
 
-}
+};
 
 export default {
   state,

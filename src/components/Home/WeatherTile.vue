@@ -103,7 +103,6 @@
       },
      mounted() {
        this.$store.dispatch(types.weather.updateDailyWeather,this.city)
-        console.log(this.today)
       }
     }
 </script>

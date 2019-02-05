@@ -34,7 +34,7 @@ export default function (/* { ssrContext } */) {
       timeStore,
       todoStore
     }
-  })
+  });
 
   return Store
 }

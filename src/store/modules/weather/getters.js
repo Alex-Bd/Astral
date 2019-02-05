@@ -2,7 +2,7 @@ import types from "./../../types"
 
 const getters = {
   [types.weather.getDailyWeather]: state => {
-    return state.threeDay
+    return state.today
   }
 
 }

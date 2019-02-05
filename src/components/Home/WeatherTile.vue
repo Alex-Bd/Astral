@@ -1,19 +1,18 @@
 <template>
-  <div  class="doc-container">
-    <div class="row slot" >
+  <div class="doc-container">
+    <div class="row">
 
-      <div class="col day-slot" v-for="day in days" :id="day.id">
-
+      <div class="col">
         <div class="row justify-center">
           <div class="col">
-            <div class="">{{day.day}}</div>
+            <div>{{today.one.time}}</div>
           </div>
         </div>
 
         <div class="row justify-center">
           <div class="col">
-            <q-icon :name= "day.condition"  color="white" size="8vh"></q-icon>
-            <span class="temp">{{day.temperature}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+            <q-icon :name= "today.one.cond"  color="white" size="8vh"></q-icon>
+            <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
           </div>
         </div>
 
@@ -28,7 +27,59 @@
             <div>smtg</div>
           </div>
         </div>
+      </div>
 
+      <div class="col">
+        <div class="row justify-center">
+          <div class="col">
+            <div>{{today.two.time}}</div>
+          </div>
+        </div>
+
+        <div class="row justify-center">
+          <div class="col">
+            <q-icon :name= "today.two.cond"  color="white" size="8vh"></q-icon>
+            <span class="temp">{{today.two.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div>smtg</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div>smtg</div>
+          </div>
+        </div>
+      </div>
+<div class="col">
+        <div class="row justify-center">
+          <div class="col">
+            <div>{{today.three.time}}</div>
+          </div>
+        </div>
+
+        <div class="row justify-center">
+          <div class="col">
+            <q-icon :name= "today.three.cond"  color="white" size="8vh"></q-icon>
+            <span class="temp">{{today.three.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div>smtg</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div>smtg</div>
+          </div>
+        </div>
       </div>
 
       </div>
@@ -44,11 +95,13 @@
       ,
       computed: {
         ...mapState({
-          days: state => state.weatherStore.threeDay
+          city: state => state.weatherStore.city,
+          today: state => state.weatherStore.today
         }),
       },
      mounted() {
-        console.log(this.days)
+       this.$store.dispatch(types.weather.updateDailyWeather,this.city)
+        console.log(this.today)
       }
     }
 </script>

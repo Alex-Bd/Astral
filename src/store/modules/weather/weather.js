@@ -3,26 +3,25 @@ import mutations from './mutations'
 import actions from './actions'
 
 const state = {
-  threeDay:[
-    {
-    id:1,
-    day: "Friday",
-    temperature: 2,
-    condition: "fas fa-cloud-moon"
-    },
-    {
-      id:2,
-      day: "Saturday",
-      temperature: 3,
-      condition: "fas fa-cloud-sun"
-    },
-    {
-      id:3,
-      day: "Sunday",
-      temperature: 1,
-      condition: "fas fa-moon"
-    }
-  ],
+  city:"Nyiregyhaza",
+
+  today:{
+    one:{
+      time:"",
+      temp:"",
+      cond:"",
+      wind:""
+  },two:{
+      time:"",
+      temp:"",
+      cond:"",
+      wind:""
+  },three:{
+      time:"",
+      temp:"",
+      cond:"",
+      wind:""
+  }},
   weekly: []
 
 }

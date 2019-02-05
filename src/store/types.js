@@ -77,5 +77,6 @@
     setDailyWeather: "weather/setDailyWeather",
     //Actions
     updateDailyWeather: "weather/updateDailyWeather"
+
    }
  }

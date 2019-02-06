@@ -105,9 +105,9 @@
       methods:{
         horiontalScrolling: function (event) {
           if(event.deltaY > 0)
-            this.$refs.scroll.scrollLeft+=30
+            this.$refs.scroll.scrollLeft+=50
           else
-            this.$refs.scroll.scrollLeft-=30
+            this.$refs.scroll.scrollLeft-=50
         }
 
       },

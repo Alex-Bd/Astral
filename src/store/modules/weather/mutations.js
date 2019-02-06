@@ -16,6 +16,7 @@ const mutations= {
 
 [types.weather.setForecastWeather]: (state,payload) => {
   let now = moment();
+  state.today.forecast=[]
   for (let i = 0; i < payload.length; ++i) {
     now.add("3", "h");
     state.today.forecast.push({

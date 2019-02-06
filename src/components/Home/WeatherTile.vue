@@ -1,6 +1,6 @@
 <template>
   <div class="doc-container">
-<div class="slot" ref="scroll" v-on:wheel="horiontalScrolling">
+<div class="slot" ref="scroll" v-on:wheel="horiontalScrolling" >
     <div  class="row items-center scroll">
 
         <div class="col day-slot">
@@ -130,7 +130,7 @@
   }
 .scroll{
   width: calc( (40vw* (1/3))*41 );
-
+  height: 20vh;
 }
 
 </style>

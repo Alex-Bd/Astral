@@ -1,24 +1,25 @@
 <template>
   <div class="doc-container">
 <div class="slot" ref="scroll" v-on:wheel="horiontalScrolling">
-    <div  class="row items-center scroll ">
-        <div class="col-4 day-slot">
+    <div  class="row items-center scroll">
+
+        <div class="col day-slot">
           <div class="row">
             <div class="col">
-              <div align="center">{{today.one.time}}</div>
+              <div align="center">{{weather.now.time}}</div>
             </div>
           </div>
 
           <div class="row">
             <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+              <q-icon :name="weather.now.cond"  color="white" size="8vh"></q-icon>
+              <span class="temp">{{weather.now.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <div align="center">{{today.one.description}}</div>
+              <div align="center">{{weather.now.description}}</div>
             </div>
           </div>
 
@@ -26,37 +27,39 @@
             <div class="col">
               <div align="center">
                 <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
+                {{weather.now.wind}}
               </div>
             </div>
               <div align="center" class="col">
                 <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
+                {{weather.now.humidity}}
               </div>
               <div align="center" class="col">
                 <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
+                {{weather.now.clouds}}
               </div>
           </div>
         </div>
 
-        <div class="col-4 day-slot">
+      <div v-for="weather in weather.forecast" :key="weather.id">
+
+       <div class="col day-slot">
           <div class="row">
             <div class="col">
-              <div align="center">{{today.one.time}}</div>
+              <div align="center">{{weather.time}}</div>
             </div>
           </div>
 
           <div class="row">
             <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+              <q-icon :name="weather.cond"  color="white" size="8vh"></q-icon>
+              <span class="temp">{{weather.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <div align="center">{{today.one.description}}</div>
+              <div align="center">{{weather.description}}</div>
             </div>
           </div>
 
@@ -64,171 +67,21 @@
             <div class="col">
               <div align="center">
                 <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
+                {{weather.wind}}
               </div>
             </div>
               <div align="center" class="col">
                 <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
+                {{weather.humidity}}
               </div>
               <div align="center" class="col">
                 <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
+                {{weather.clouds}}
               </div>
           </div>
         </div>
+      </div>
 
-        <div class="col-4 day-slot">
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.time}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.description}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">
-                <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
-              </div>
-            </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
-              </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
-              </div>
-          </div>
-        </div>
-
-        <div class="col-4 day-slot">
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.time}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.description}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">
-                <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
-              </div>
-            </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
-              </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
-              </div>
-          </div>
-        </div>
-
-        <div class="col-4 day-slot">
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.time}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.description}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">
-                <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
-              </div>
-            </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
-              </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
-              </div>
-          </div>
-        </div>
-
-        <div class="col-4 day-slot">
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.time}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div align="center" class="col">
-              <q-icon :name="today.one.cond"  color="white" size="8vh"></q-icon>
-              <span class="temp">{{today.one.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">{{today.one.description}}</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div align="center">
-                <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
-                {{today.one.wind}}
-              </div>
-            </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
-                {{today.one.humidity}}
-              </div>
-              <div align="center" class="col">
-                <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
-                {{today.one.clouds}}
-              </div>
-          </div>
-        </div>
 
     </div>
 </div>
@@ -246,7 +99,7 @@
       computed: {
         ...mapState({
           city: state => state.weatherStore.city,
-          today: state => state.weatherStore.today
+          weather: state => state.weatherStore.today
         }),
       },
       methods:{
@@ -268,13 +121,16 @@
   .slot{
     width: 40vw;
     height: 20vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .day-slot{
     width: calc(40vw* (1/3));
     text-align: center;
   }
 .scroll{
-  width: 100vw;
+  width: calc( (40vw* (1/3))*41 );
+
 }
+
 </style>

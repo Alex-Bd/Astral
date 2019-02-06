@@ -5,26 +5,7 @@ import actions from './actions'
 const state = {
   city:"Nyiregyhaza",
 
-  today:{
-    one:{
-      time:"",
-      temp:0,
-      cond:"",
-      wind:"",
-      description:""
-  },two:{
-      time:"",
-      temp:0,
-      cond:"",
-      wind:"",
-      description:""
-  },three:{
-      time:"",
-      temp:0,
-      cond:"",
-      wind:"",
-      description:""
-  }},
+  today:{now:{},forecast:[]},
   weekly: []
 
 };

@@ -5,33 +5,31 @@ import {codeConverter} from "./WeatherCodes"
 const mutations= {
  [types.weather.setCurrentWeather]: (state,payload) => {
     let now = moment();
-    state.today.one.time=now.hour()+":00";
-    state.today.one.temp=Math.round(payload.main.temp);
-    state.today.one.cond=codeConverter(payload.weather[0].icon);
-    state.today.one.wind= Math.trunc(payload.wind.speed*3.6);
-    state.today.one.description=payload.weather[0].description;
-    state.today.one.humidity=payload.main.humidity;
-    state.today.one.clouds=payload.clouds.all+"%";
+    state.today.now.time=now.hour()+":00";
+    state.today.now.temp=Math.round(payload.main.temp);
+    state.today.now.cond=codeConverter(payload.weather[0].icon);
+    state.today.now.wind= Math.trunc(payload.wind.speed*3.6);
+    state.today.now.description=payload.weather[0].description;
+    state.today.now.humidity=payload.main.humidity;
+    state.today.now.clouds=payload.clouds.all+"%";
  },
-[types.weather.setForecastWeather]: (state,payload) => {
-    let now = moment();
-    now.add("3","h");
-    state.today.two.time=now.hour()+":00";
-    state.today.two.temp=Math.round(payload[0].main.temp);
-    state.today.two.cond=codeConverter(payload[0].weather[0].icon);
-    state.today.two.wind=Math.trunc(payload[0].wind.speed*3.6);
-    state.today.two.description=payload[0].weather[0].description;
-    state.today.two.humidity=payload[0].main.humidity;
-    state.today.two.clouds=payload[0].clouds.all+"%";
 
-    now.add("3","h");
-    state.today.three.time=now.hour()+":00";
-    state.today.three.temp=Math.round(payload[1].main.temp);
-    state.today.three.cond=codeConverter(payload[1].weather[0].icon);
-    state.today.three.wind=Math.trunc(payload[0].wind.speed*3.6);
-    state.today.three.description=payload[1].weather[0].description
-    state.today.three.humidity=payload[1].main.humidity;
-    state.today.three.clouds=payload[1].clouds.all+"%";
+[types.weather.setForecastWeather]: (state,payload) => {
+  let now = moment();
+  for (let i = 0; i < payload.length; ++i) {
+    now.add("3", "h");
+    state.today.forecast.push({
+      id:i,
+      time : now.hour() + ":00",
+      temp: Math.round(payload[i].main.temp),
+      cond : codeConverter(payload[i].weather[0].icon),
+      wind : Math.trunc(payload[i].wind.speed * 3.6),
+      description : payload[i].weather[0].description,
+      humidity: payload[i].main.humidity,
+      clouds: payload[i].clouds.all + "%"
+    });
+}
+
  },
 };
 

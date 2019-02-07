@@ -2,7 +2,7 @@
   <div class="doc-container">
     <div class="slot" ref="scroll" v-on:wheel="horizontalScrolling" >
       <div  class="row items-center scroll">
-        <div v-for="weather in weather" :key="weather.id">
+        <div v-for="weather in weather" :key="weather.id" :style="temperatureColor(weather.temp)">
 
           <div class="col day-slot">
 
@@ -13,7 +13,7 @@
             </div>
 
             <div class="row items-center">
-              <div align="center" class="col" :style="temperatureColor(weather.temp)">
+              <div align="center" class="col" >
                 <q-icon  :name="weather.cond"  size="8vh"></q-icon>
                 <span  class="temp">{{weather.temp}} <span>&#8451;</span> </span>
               </div>
@@ -28,16 +28,16 @@
             <div class="row">
               <div class="col">
                 <div align="center">
-                  <q-icon name="fas fa-wind"  color="white" size="3vh"></q-icon>
+                  <q-icon name="fas fa-wind" size="3vh"></q-icon>
                   {{weather.wind}}
                 </div>
               </div>
               <div align="center" class="col">
-                <q-icon name="fas fa-tint"  color="white" size="3vh"></q-icon>
+                <q-icon name="fas fa-tint" size="3vh"></q-icon>
                 {{weather.humidity}}
               </div>
               <div align="center" class="col">
-                <q-icon name="fas fa-cloud"  color="white" size="3vh"></q-icon>
+                <q-icon name="fas fa-cloud" size="3vh"></q-icon>
                 {{weather.clouds}}
               </div>
             </div>
@@ -71,6 +71,7 @@
           this.$refs.scroll.scrollLeft-=50;
       },
       temperatureColor: function (temperature) {
+        //Polynomial interpolation
         let amount=0;
         if(temperature > 40)
           amount=19;
@@ -83,7 +84,7 @@
         else if(temperature > -20)
           amount=200-2*temperature;
         else
-          amount=240
+          amount=240;
 
         return "color: hsl("+amount+", 100%, 60%);";
       }

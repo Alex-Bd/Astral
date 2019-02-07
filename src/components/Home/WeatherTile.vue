@@ -12,10 +12,10 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row items-center">
               <div align="center" class="col">
-                <q-icon :name="weather.cond"  color="white" size="8vh"></q-icon>
-                <span class="temp">{{weather.temp}}<q-icon name= "fas fa-temperature-low" color="white" size="3vh"></q-icon></span>
+                <q-icon  :name="weather.cond"  color="white" size="8vh"></q-icon>
+                <span  class="temp">{{weather.temp}} <span>&#8451;</span> </span>
               </div>
             </div>
 
@@ -92,6 +92,9 @@
   .scroll{
     width: calc( (40vw* (1/3))*41 );
     height: 20vh;
+  }
+  .temp{
+    margin-left: 10px;
   }
 
 </style>

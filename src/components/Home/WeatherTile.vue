@@ -13,8 +13,8 @@
             </div>
 
             <div class="row items-center">
-              <div align="center" class="col">
-                <q-icon  :name="weather.cond"  color="white" size="8vh"></q-icon>
+              <div align="center" class="col" :style="temperatureColor(weather.temp)">
+                <q-icon  :name="weather.cond"  size="8vh"></q-icon>
                 <span  class="temp">{{weather.temp}} <span>&#8451;</span> </span>
               </div>
             </div>
@@ -50,8 +50,8 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
-  import types from './../../store/types'
+  import { mapState } from 'vuex';
+  import types from './../../store/types';
 
 
   export default {
@@ -66,14 +66,33 @@
     methods:{
       horizontalScrolling: function (event) {
         if(event.deltaY > 0)
-          this.$refs.scroll.scrollLeft+=50
+          this.$refs.scroll.scrollLeft+=50;
         else
-          this.$refs.scroll.scrollLeft-=50
+          this.$refs.scroll.scrollLeft-=50;
+      },
+      temperatureColor: function (temperature) {
+        // -20-10 dark blue -10-0 blue 0-10 cyan 10-20 green 20-30 yellow 30-40 red
+        let amount;
+
+        if(temperature < -20)
+          amount=241;
+        else if(temperature > -20)
+          amount=200-2*temperature;
+        else if(temperature > -10)
+          amount=190-3*temperature;
+        else if(temperature > 0)
+          amount=240-8*temperature;
+        else if(temperature > 20)
+          amount=140-3*temperature;
+        else if(temperature > 40)
+          amount=19;
+
+        return "color: hsl("+amount+", 100%, 60%);";
       }
 
     },
     mounted() {
-      this.$store.dispatch(types.weather.updateDailyWeather,this.city)
+      this.$store.dispatch(types.weather.updateDailyWeather,this.city);
     }
   }
 </script>

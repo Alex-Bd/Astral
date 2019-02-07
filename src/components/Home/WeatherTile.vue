@@ -71,21 +71,21 @@
           this.$refs.scroll.scrollLeft-=50;
       },
       temperatureColor: function (temperature) {
-        // -20-10 dark blue -10-0 blue 0-10 cyan 10-20 green 20-30 yellow 30-40 red
         let amount;
-
-        if(temperature < -20)
-          amount=241;
-        else if(temperature > -20)
-          amount=200-2*temperature;
-        else if(temperature > -10)
-          amount=190-3*temperature;
-        else if(temperature > 0)
-          amount=240-8*temperature;
+        if(temperature > 40)
+          amount=19;
         else if(temperature > 20)
           amount=140-3*temperature;
-        else if(temperature > 40)
-          amount=19;
+        else if(temperature > 10)
+          amount=240-8*temperature;
+        else if(temperature > -10)
+          amount=190-3*temperature;
+        else if(temperature > -20)
+          amount=200-2*temperature;
+        else
+          amount=240
+
+
 
         return "color: hsl("+amount+", 100%, 60%);";
       }

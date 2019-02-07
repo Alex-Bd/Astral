@@ -71,7 +71,7 @@
           this.$refs.scroll.scrollLeft-=50;
       },
       temperatureColor: function (temperature) {
-        let amount;
+        let amount=0;
         if(temperature > 40)
           amount=19;
         else if(temperature > 20)
@@ -84,8 +84,6 @@
           amount=200-2*temperature;
         else
           amount=240
-
-
 
         return "color: hsl("+amount+", 100%, 60%);";
       }

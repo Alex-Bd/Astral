@@ -4,10 +4,7 @@ import actions from './actions'
 
 const state = {
   city:"Nyiregyhaza",
-
   forecast:[],
-  weekly: []
-
 };
 
 export default {

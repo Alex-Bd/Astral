@@ -1,5 +1,5 @@
 <template>
-  <div class="doc-container size background shadow-1">
+  <div class="doc-container size background">
 
     <q-context-menu>
       <q-list link separator style="min-width: 150px; max-height: 300px;">
@@ -9,8 +9,31 @@
       </q-list>
     </q-context-menu>
 
+    <div class="menu" v-show="sideBarShow">
+      <q-list no-border="true">
+
+        <q-item>
+          <q-item-main label="John Doe" />
+        </q-item>
+        <q-item>
+          <q-item-main label="Jim Doe" />
+        </q-item>
+
+        <q-item-separator />
+
+        <q-item>
+          <q-item-main label="Jack Doe" />
+        </q-item>
+
+      </q-list>
+
+    </div>
+
     <div class="row header items-center">
-      <div  class="col">
+      <div class="bar-menu" v-ripple.mat @click="openMenu" align="middle">
+        <q-icon class="menu-icon" name="fas fa-bars"  color="white" size="1em"></q-icon>
+      </div>
+      <div class="col">
         Now playing
       </div>
     </div>
@@ -43,13 +66,13 @@
 
     <div class="row items-center controls">
           <div class="col">
-            <q-icon name="fas fa-step-backward"  color="white" size="2em"></q-icon>
+            <q-icon name="fas fa-step-backward"  color="white" size="1.5em"></q-icon>
           </div>
           <div class="col" @click="PlayPause">
-            <q-icon   name= "fas fa-play"  color="white" size="3em"></q-icon>
+            <q-icon   name= "fas fa-play"  color="white" size="2em"></q-icon>
           </div>
           <div class="col">
-            <q-icon name= "fas fa-step-forward"  color="white" size="2em"></q-icon>
+            <q-icon name= "fas fa-step-forward"  color="white" size="1.5em"></q-icon>
           </div>
     </div>
 
@@ -65,7 +88,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -78,7 +100,8 @@
       return {
         min: 0,
         max: 100,
-        showing: true
+        showing: true,
+        sideBarShow: false
       }
     },
     computed: {
@@ -94,6 +117,9 @@
           this.$store.dispatch("musicStore/"+types.music.player.start);
         else
           this.$store.dispatch("musicStore/"+types.music.player.stop)
+      },
+      openMenu: function () {
+        this.sideBarShow= !this.sideBarShow
       }
     },
     beforeMount() {
@@ -110,6 +136,7 @@
   .size{
     width: 15em;
     height: 25em;
+    min-height: 25em;
   }
 
   .header{
@@ -131,10 +158,25 @@
     width: 95%;
   }
   .controls{
-    height: 20%;
+    height: 10%;
   }
   .volume-and-misc{
     height: 10%;
   }
+  .bar-menu{
+    position:absolute;
+    width: 2.5em;
+    height: 2.5em;
+    padding-top: 0.65em;
 
+  }
+  .menu-icon{
+
+  }
+  .menu{
+    padding-top: 2.5em;
+    position: absolute;
+    background-color: black;
+    height: 25em;
+  }
 </style>

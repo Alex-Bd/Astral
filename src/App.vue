@@ -1,11 +1,12 @@
 <template>
-  <div id="q-app">
+  <q-layout id="q-app">
+  <q-page-container >
     <router-view/>
+  </q-page-container>
     <div>
       <background></background>
     </div>
-  </div>
-
+  </q-layout>
 </template>
 
 <script>

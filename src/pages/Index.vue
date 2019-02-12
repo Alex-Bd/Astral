@@ -1,5 +1,5 @@
 <template>
-  <div class="doc-container">
+
     <div class="row">
 
       <div class="col-5">
@@ -36,7 +36,7 @@
           </div>
         </div>
     </div>
-  </div>
+
 </template>
 
 <script>

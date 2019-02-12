@@ -130,7 +130,7 @@
 <style scoped>
 
   .background{
-    background-color: rgba(12, 34, 12, 0.58);
+    background-color: hsla(120,100%,0%,0.6);
   }
   .size{
     width: 15em;

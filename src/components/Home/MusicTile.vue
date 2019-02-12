@@ -9,18 +9,17 @@
       </q-list>
     </q-context-menu>
 
-    <div class="menu" v-show="sideBarShow">
-      <q-list no-border="true">
+    <q-slide-transition>
 
+    <div class="menu" v-show="sideBarShow" key="sideBarShow">
+      <q-list class="menu-list" no-border="true">
         <q-item>
           <q-item-main label="John Doe" />
         </q-item>
         <q-item>
           <q-item-main label="Jim Doe" />
         </q-item>
-
         <q-item-separator />
-
         <q-item>
           <q-item-main label="Jack Doe" />
         </q-item>
@@ -28,7 +27,7 @@
       </q-list>
 
     </div>
-
+      </q-slide-transition>
     <div class="row header items-center">
       <div class="bar-menu" v-ripple.mat @click="openMenu" align="middle">
         <q-icon class="menu-icon" name="fas fa-bars"  color="white" size="1em"></q-icon>
@@ -170,13 +169,13 @@
     padding-top: 0.65em;
 
   }
-  .menu-icon{
-
-  }
   .menu{
     padding-top: 2.5em;
     position: absolute;
     background-color: black;
     height: 25em;
+  }
+  .menu-list{
+    height: 22.5em;
   }
 </style>

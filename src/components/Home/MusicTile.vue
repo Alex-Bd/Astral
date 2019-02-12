@@ -1,5 +1,5 @@
 <template>
-  <div class="doc-container background shadow-1">
+  <div class="doc-container size background shadow-1">
 
     <q-context-menu>
       <q-list link separator style="min-width: 150px; max-height: 300px;">
@@ -112,5 +112,9 @@
   }
   .background{
    background-color: rgba(12, 34, 12, 0.58);
+  }
+  .size{
+    width: 30vh;
+    height: 50vh;
   }
 </style>

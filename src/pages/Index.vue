@@ -9,8 +9,8 @@
             </div>
         </div>
         <div class="row">
-           <div class="col">
-             <Music></Music>
+           <div align="center" class="col">
+             <Music ></Music>
            </div>
         </div>
       </div>

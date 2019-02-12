@@ -1,6 +1,6 @@
 <template>
   <div class="doc-container">
-    <div class="slot" ref="scroll" v-on:wheel="horizontalScrolling" >
+    <div class="size" ref="scroll" v-on:wheel="horizontalScrolling" >
       <div  class="row items-center scroll">
         <div v-for="weather in weather" :key="weather.id" :style="temperatureColor(weather.temp)">
 
@@ -97,19 +97,20 @@
 </script>
 
 <style scoped>
-  .slot{
-    width: 40vw;
-    height: 20vh;
+  .size{
+    background-color: hsla(120,100%,0%,0.6);
+    width: 38em;
+    height: 9em;
     overflow-y: auto;
     overflow-x: hidden;
   }
   .day-slot{
-    width: calc(40vw* (1/3));
+    width: calc(38em* (1/3));
     text-align: center;
   }
   .scroll{
-    width: calc( (40vw* (1/3))*41 );
-    height: 20vh;
+    width: calc( (38em* (1/3))*41 );
+    height:9em;
   }
   .temp{
     margin-left: 10px;

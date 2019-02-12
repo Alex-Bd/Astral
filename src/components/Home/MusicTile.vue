@@ -175,6 +175,7 @@
     background-color: black;
     height: 25em;
   }
+  /*The List must be max height for the animation to be smooth */
   .menu-list{
     height: 22.5em;
   }

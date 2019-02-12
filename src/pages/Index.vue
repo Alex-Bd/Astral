@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row">
-           <div align="center" class="col">
+           <div align="center" class="col" >
              <Music ></Music>
            </div>
         </div>

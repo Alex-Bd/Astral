@@ -1,91 +1,130 @@
 <template>
-  <div class="doc-container size background">
+  <div class="doc-container background size">
+      <q-slide-transition>
+        <div class="menu" v-show="sideBarShow" key="sideBarShow">
+          <q-list dark class="menu-list" no-border="true" highlight>
+            <q-item link to="music/file">
+              <q-item-main>
+                Folders
+              </q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>
+                Youtube
+              </q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>
+                ETC
+              </q-item-main>
+            </q-item>
 
-    <q-context-menu>
-      <q-list link separator style="min-width: 150px; max-height: 300px;">
-        <q-item v-close-overlay to="music/file">
-          <q-item-main label="Player"/>
-        </q-item>
-      </q-list>
-    </q-context-menu>
+          </q-list>
 
-    <q-slide-transition>
-
-    <div class="menu" v-show="sideBarShow" key="sideBarShow">
-      <q-list class="menu-list" no-border="true">
-        <q-item>
-          <q-item-main label="John Doe" />
-        </q-item>
-        <q-item>
-          <q-item-main label="Jim Doe" />
-        </q-item>
-        <q-item-separator />
-        <q-item>
-          <q-item-main label="Jack Doe" />
-        </q-item>
-
-      </q-list>
-
-    </div>
+        </div>
       </q-slide-transition>
-    <div class="row header items-center">
-      <div class="bar-menu" v-ripple.mat @click="openMenu" align="middle">
-        <q-icon class="menu-icon" name="fas fa-bars"  color="white" size="1em"></q-icon>
+      <div class="row header items-center">
+        <div class="bar-menu" v-ripple.mat @click="openMenu" align="middle">
+          <q-icon class="menu-icon" name="fas fa-bars"  color="white" size="1em"></q-icon>
+        </div>
+        <div class="col">
+          Now playing
+        </div>
       </div>
-      <div class="col">
-        Now playing
-      </div>
-    </div>
 
-    <div class="row items-center picture">
-      <div  class="col">
-        <img src="https://img.purch.com/h/1400/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAwNS82NDQvb3JpZ2luYWwvbW9vbi13YXRjaGluZy1uaWdodC0xMDA5MTYtMDIuanBn"
-             width="auto"
-             height="120">
+      <div class="row items-center picture">
+        <div  class="col">
+          <img src="https://img.purch.com/h/1400/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAwNS82NDQvb3JpZ2luYWwvbW9vbi13YXRjaGluZy1uaWdodC0xMDA5MTYtMDIuanBn"
+               width="auto"
+               height="120">
+        </div>
       </div>
-    </div>
 
-    <div class="row items-center song-title">
-      <div class="col">
-        Welcome to the Jungle
+      <div class="row items-center song-title">
+        <div class="col">
+          Welcome to the Jungle
+        </div>
       </div>
-    </div>
 
-    <div class="row items-center artist-and-album">
-      <div class="col">
-        Guns 'n Roses | Appetite for Destruction
+      <div class="row items-center artist-and-album">
+        <div class="col">
+          Guns 'n Roses | Appetite for Destruction
+        </div>
       </div>
-    </div>
 
-    <div class="row items-center progress-bar">
-      <div class="col">
-        <q-Slider :min="min" :max="max" :step="1" />
+      <div class="row items-center progress-bar">
+        <div class="col">
+          <q-Slider :min="min" :max="max" :step="1" />
+        </div>
       </div>
-    </div>
 
-    <div class="row items-center controls">
-          <div class="col">
-            <q-icon name="fas fa-step-backward"  color="white" size="1.5em"></q-icon>
-          </div>
-          <div class="col" @click="PlayPause">
-            <q-icon   name= "fas fa-play"  color="white" size="2em"></q-icon>
-          </div>
-          <div class="col">
-            <q-icon name= "fas fa-step-forward"  color="white" size="1.5em"></q-icon>
-          </div>
-    </div>
+      <div class="row items-center controls">
+        <div class="col">
+          <q-icon name="fas fa-step-backward"  color="white" size="1.5em"></q-icon>
+        </div>
+        <div class="col" @click="PlayPause">
+          <q-icon   name= "fas fa-play"  color="white" size="2em"></q-icon>
+        </div>
+        <div class="col">
+          <q-icon name= "fas fa-step-forward"  color="white" size="1.5em"></q-icon>
+        </div>
+      </div>
 
-    <div class="row items-center volume-and-misc">
-      <div class="col-3">
-        <q-icon name= "fas fa-redo"  color="white" size="2vh"></q-icon>
+      <div class="row items-center volume-and-misc">
+        <div class="col-3">
+          <q-icon name= "fas fa-redo"  color="white" size="2vh"></q-icon>
+        </div>
+        <div class="col-6">
+          <q-Slider :min="min" :max="max" :step="1" />
+        </div>
+        <div class="col-3">
+          <q-icon name= "fas fa-random"  color="white" size="2vh"></q-icon>
+        </div>
       </div>
-      <div class="col-6">
-        <q-Slider :min="min" :max="max" :step="1" />
+
+      <div class="row items-center song-list">
+        <div class="col">
+          <q-list highlight no-border="true" highlight>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-main>test</q-item-main>
+            </q-item>
+
+
+
+          </q-list>
+
+        </div>
       </div>
-      <div class="col-3">
-        <q-icon name= "fas fa-random"  color="white" size="2vh"></q-icon>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -136,32 +175,41 @@
     width: 15em;
     height: 25em;
     min-height: 25em;
+    overflow-y: auto;
+  }
+  .size::-webkit-scrollbar{
+   display:none;
   }
 
+
   .header{
-    height: 10%;
+    height: 2em;
   }
   .picture{
-    height: 30%;
+    height: 9em;
   }
   .song-title{
     font-size: 1.2em;
-    height: 10%;
+    height: 2em;
   }
   .artist-and-album{
     font-size: 0.8em;
-    height: 10%;
+    height: 2em;
   }
   .progress-bar{
-   height: 10%;
+    height: 2em;
     width: 95%;
   }
   .controls{
-    height: 10%;
+    height: 2em;
   }
   .volume-and-misc{
-    height: 10%;
+    height: 2em;
   }
+  .song-list{
+    height: 2em;
+  }
+
   .bar-menu{
     position:absolute;
     width: 2.5em;
@@ -172,8 +220,9 @@
   .menu{
     padding-top: 2.5em;
     position: absolute;
-    background-color: black;
+    background-color: hsla(120,100%,0%,0.8);
     height: 25em;
+    width: 7.5em;
   }
   /*The List must be max height for the animation to be smooth */
   .menu-list{

@@ -27,4 +27,5 @@ export default {
     background-size: cover;
     color: $primary;
   }
+
 </style>

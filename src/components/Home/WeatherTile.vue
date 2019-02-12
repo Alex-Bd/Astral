@@ -1,6 +1,6 @@
 <template>
-  <div class="doc-container">
-    <div class="size" ref="scroll" v-on:wheel="horizontalScrolling" >
+  <div class="">
+    <div class="size" ref="weatherTileScroll" v-on:wheel="horizontalScrolling" >
       <div  class="row items-center scroll">
         <div v-for="weather in weather" :key="weather.id" :style="temperatureColor(weather.temp)">
 
@@ -66,9 +66,9 @@
     methods:{
       horizontalScrolling: function (event) {
         if(event.deltaY > 0)
-          this.$refs.scroll.scrollLeft+=50;
+          this.$refs.weatherTileScroll.scrollLeft+=50;
         else
-          this.$refs.scroll.scrollLeft-=50;
+          this.$refs.weatherTileScroll.scrollLeft-=50;
       },
       temperatureColor: function (temperature) {
         //Polynomial interpolation
@@ -104,6 +104,7 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
+
   .day-slot{
     width: calc(38em* (1/3));
     text-align: center;

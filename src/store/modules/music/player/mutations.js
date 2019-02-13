@@ -3,7 +3,8 @@ import types from "./../../../types"
 const mutations= {
 
   [types.music.player.setPlay]: (state,payload) => {
-    state.play=payload
+    state.play=payload.action
+    state.playButton=payload.button
   },
   [types.music.player.setDuration]: (state,payload) => {
     state.duration=payload
@@ -25,6 +26,7 @@ const mutations= {
     state.random=payload;
   },
   [types.music.player.setVolume]:(state,payload) => {
+    console.log(payload)
     state.volume=payload;
   }
 

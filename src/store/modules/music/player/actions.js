@@ -2,10 +2,10 @@ import types from "./../../../types"
 
 const actions= {
   [types.music.player.start]: ({commit}) =>{
-    commit(types.music.player.setPlay,"play")
+    commit(types.music.player.setPlay,{action:"play",button:"fas fa-pause"})
   },
   [types.music.player.stop]: ({commit}) =>{
-    commit(types.music.player.setPlay,"pause")
+    commit(types.music.player.setPlay,{action:"pause",button:"fas fa-play"})
   },
 
   [types.music.player.toggleRandom]: ({commit},payload) =>{

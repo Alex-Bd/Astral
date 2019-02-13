@@ -4,9 +4,10 @@ import actions from './actions'
 
 const state = {
   play: false,
+  playButton:"fas fa-play",
   progress: 0,
   progressMax:0,
-  volume:50,
+  volume:0.9,
   loop:false,
   random:false
 };

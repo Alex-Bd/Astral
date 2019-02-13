@@ -2,7 +2,9 @@ import types from "./../../types"
 
 const actions= {
   [types.music.loadMusicList]: ({commit}) => {
-    let call = [types.domain] + "/getmusic";
+    console.log("loaded")
+    let call = [types.domain] + "/music/getMusic";
+
     fetch(call, {mode: "cors", method: "Get"})
       .then(
         function (response) {
@@ -18,7 +20,7 @@ payload.album.forEach((item) => {
   album.push(item.artist)
 })
 
-  let call = [types.domain] + "/getsong/"+payload.artist;
+  let call = [types.domain] + "/music/getSong/"+payload.artist;
   fetch(call, {mode: "cors", method: "Get"})
     .then(
       function (response) {

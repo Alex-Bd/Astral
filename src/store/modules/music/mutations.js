@@ -8,11 +8,10 @@ const mutations= {
      })
   },
   [types.music.setSong]: (state,payload) => {
-    state.currentSong.title = payload.song.name
-    state.currentSong.src= "http://localhost:3000/Music/"+payload.song.path.replace("\\","/")
+    state.currentSong.title = payload.name
+    state.currentSong.src= "http://localhost:3000/Music/"+payload.path.replace("\\","/")
   },
   [types.music.setCurrentAlbum]: (state,payload) => {
-
   }
 }
 

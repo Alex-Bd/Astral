@@ -12,7 +12,8 @@ const state = {
     artist: '',
     src: '',
     pic: ''
-  }
+  },
+
 
 
 }

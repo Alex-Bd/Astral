@@ -2,7 +2,6 @@ import types from "./../../../types"
 
 const getters = {
   [types.music.player.getPlay]: state => {
-    console.log(state.play)
     return state.play
   },
   [types.music.player.getProgress]: state =>{

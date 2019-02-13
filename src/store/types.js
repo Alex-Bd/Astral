@@ -36,9 +36,16 @@
        setDuration: "player/setDuration",
        setCurrentAlbum: "player/setCurrentAlbum",
        setBreadcrumbs:"player/setBreadcrumbs",
+       setLoop:"player/setLoop",
+       setRandom:"player/setRandom",
+       setVolume:"player/setVolume",
        //Actions
        start: "player/start",
        stop: "player/stop",
+       toggleLoop:"player/toggleLoop",
+       toggleRandom:"player/toggleRandom",
+       changeVolume:"player/changeVolume",
+
        getMetaData: "player/getMetaData",
        changeCurrentAlbum:"player/changeCurrentAlbum",
        modifyBreadcrumbs:"player/modifyBreadcrumbs",

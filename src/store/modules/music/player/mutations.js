@@ -18,6 +18,16 @@ const mutations= {
       }
     }))
   },
+  [types.music.player.setLoop]:(state,payload) => {
+    state.loop=payload;
+  },
+  [types.music.player.setRandom]:(state,payload) => {
+    state.random=payload;
+  },
+  [types.music.player.setVolume]:(state,payload) => {
+    state.volume=payload;
+  }
+
 
 }
 

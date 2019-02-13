@@ -3,9 +3,13 @@ import mutations from './mutations'
 import actions from './actions'
 
 const state = {
-  play: "",
-  duration: 0,
-}
+  play: false,
+  progress: 0,
+  progressMax:0,
+  volume:50,
+  loop:false,
+  random:false
+};
 
 export default {
   state,

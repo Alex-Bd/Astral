@@ -1,37 +1,37 @@
-import types from "./../../types"
+import types from "./../../types";
 
-const actions= {
-  [types.music.loadMusicList]: ({commit}) => {
-    console.log("loaded")
+const actions = {
+  [types.music.loadMusicList]: ({ commit }) => {
+    console.log("loaded");
     let call = [types.domain] + "/music/getMusic";
 
-    fetch(call, {mode: "cors", method: "Get"})
-      .then(
-        function (response) {
-          return response.json()
-        }).then(function (list) {
-      commit(types.music.setMusicList, list);
-    })
-
+    fetch(call, { mode: "cors", method: "Get" })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(list) {
+        commit(types.music.setMusicList, list);
+      });
   },
-[types.music.loadMusic]: ({commit,dispatch},payload) => {
-    let album = []
-payload.album.forEach((item) => {
-  album.push(item.artist)
-})
+  [types.music.loadMusic]: ({ commit, dispatch }, payload) => {
+    commit(types.music.setCurrentAlbum, payload.artist);
 
-  let call = [types.domain] + "/music/getSong/"+payload.artist;
-  fetch(call, {mode: "cors", method: "Get"})
-    .then(
-      function (response) {
-        return response.json()
-      }).then(function (song) {
-    console.log("music/actions: LoadedMusic: ", song)
-    commit(types.music.setSong, song);
+    let call = [types.domain] + "/music/getSong/" + payload.artist;
 
-  }).then(function () {
-   dispatch(types.music.player.start)
-  })
+    fetch(call, { mode: "cors", method: "Get" })
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(song) {
+        commit(types.music.setSong, {
+          song: song,
+          album: payload.artist.split("\\")[0],
+          artist: payload.artist.split("\\")[1]
+        });
+      })
+      .then(function() {
+        dispatch(types.music.player.start);
+      });
   }
-}
-export default actions
+};
+export default actions;

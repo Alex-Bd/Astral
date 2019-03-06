@@ -1,14 +1,12 @@
-import getters from './getters'
-import mutations from './mutations'
-import actions from './actions'
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
-const state = {
-
-}
+const state = {};
 
 export default {
   state,
   getters,
   actions,
   mutations
-}
+};

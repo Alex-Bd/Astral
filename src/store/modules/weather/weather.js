@@ -1,10 +1,10 @@
-import getters from './getters'
-import mutations from './mutations'
-import actions from './actions'
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
 const state = {
-  city:"Nyiregyhaza",
-  forecast:[],
+  city: "Nyiregyhaza",
+  forecast: []
 };
 
 export default {
@@ -12,4 +12,4 @@ export default {
   getters,
   actions,
   mutations
-}
+};

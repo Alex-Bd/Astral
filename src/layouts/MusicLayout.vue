@@ -50,13 +50,8 @@ export default {
       leftDrawer: true
     }
   },
-  computed: {
-    ...mapState({
-
-    })
-  },
   beforeMount() {
-    this.$store.dispatch("musicStore/music/loadMusicList")
+    //this.$store.dispatch("musicStore/music/loadMusicList")
 
   }
 
@@ -64,11 +59,11 @@ export default {
 </script>
 
 <style scoped  lang="stylus">
-  @import '~variables';
+
   .root{
     height:100%
-    background-image linear-gradient(to bottom, $evening,$stormy);
-    color $primary
+    background-image linear-gradient(to bottom,white,black);
+    color white
   }
   .sources{
     height 80%

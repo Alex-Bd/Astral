@@ -1,15 +1,15 @@
-import getters from './getters'
-import mutations from './mutations'
-import actions from './actions'
+import getters from "./getters";
+import mutations from "./mutations";
+import actions from "./actions";
 
 const state = {
   play: false,
-  playButton:"fas fa-play",
+  playButton: "fas fa-play",
   progress: 0,
-  progressMax:0,
-  volume:0.9,
-  loop:false,
-  random:false
+  progressMax: 0,
+  volume: 1,
+  loop: false,
+  random: false
 };
 
 export default {
@@ -17,4 +17,4 @@ export default {
   getters,
   actions,
   mutations
-}
+};

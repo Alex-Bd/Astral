@@ -1,16 +1,15 @@
-import types from "./../../../types"
+import types from "./../../../types";
 
 const getters = {
   [types.music.player.getPlay]: state => {
-    return state.play
+    return state.play;
   },
-  [types.music.player.getProgress]: state =>{
-    return state.progress
+  [types.music.player.getProgress]: state => {
+    return state.progress;
   },
   [types.music.player.getCurrentAlbum]: state => {
-    return state.currentAlbum
+    return state.currentAlbum;
   }
+};
 
-}
-
-export default getters
+export default getters;

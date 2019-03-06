@@ -1,4 +1,4 @@
-import types from './../../../types'
+import types from "./../../../types";
 
 const getters = {
   [types.time.getDate]: state => {
@@ -7,6 +7,6 @@ const getters = {
   [types.time.getTime]: state => {
     return state.time;
   }
-}
+};
 
-export default getters
+export default getters;

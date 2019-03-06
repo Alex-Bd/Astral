@@ -1,12 +1,18 @@
 <template>
   <div class="row items-center song-list">
     <div class="col">
-      <q-list highlight :no-border=true highlight dark>
+      <q-list
+        highlight
+        :no-border="true"
+        dark
+        v-for="song in album"
+        :key="song"
+      >
         <q-item>
           <q-item-side>
             <q-icon name="fas fa-play" color="white" size="0.5em"></q-icon>
           </q-item-side>
-          <q-item-main>test</q-item-main>
+          <q-item-main> {{ song.split("\\")[3] }}}</q-item-main>
           <q-item-side>
             3:14
           </q-item-side>
@@ -17,17 +23,20 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
-  import types from './../../../store/types'
+import { mapState } from "vuex";
 
-    export default {
-        name: "MusicListComponent",
-
-    }
+export default {
+  name: "MusicListComponent",
+  computed: {
+    ...mapState({
+      album: state => state.musicStore.music.currentAlbum
+    })
+  }
+};
 </script>
 
 <style scoped>
-  .song-list {
-    height: 1em;
-  }
+.song-list {
+  height: 1em;
+}
 </style>

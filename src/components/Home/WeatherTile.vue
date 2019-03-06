@@ -1,3 +1,4 @@
+<!--suppress JSUnusedAssignment -->
 <template>
   <div class="">
     <div class="size" ref="weatherTileScroll" v-on:wheel="horizontalScrolling">

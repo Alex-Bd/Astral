@@ -1,7 +1,7 @@
 <template>
   <div class="doc-container background size">
     <q-slide-transition>
-      <div class="menu" v-show="sideBarShow" key="sideBarShow">
+      <div class="menu" v-show="sideBarShow" :key="sideBarShow">
         <q-list dark class="menu-list" :no-border="true" highlight>
           <q-item link to="music/file">
             <q-item-main>
@@ -23,7 +23,7 @@
     </q-slide-transition>
 
     <div class="row header items-center">
-      <div class="bar-menu" v-ripple.mat @click="openMenu" align="middle">
+      <div class="bar-menu" @click="openMenu" align="middle">
         <q-icon
           class="menu-icon"
           name="fas fa-bars"
@@ -42,7 +42,7 @@
           src="https://e.snmc.io/i/300/w/3e4d06962a18b8c16ca5235c95236cdd/5925287"
           width="auto"
           height="160"
-        />
+          alt="placeholder"/>
       </div>
     </div>
 

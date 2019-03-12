@@ -1,14 +1,44 @@
 <template>
-  <q-layout view="hHh lpR fFf"   >
-    <q-drawer v-model="left" side="left" >
-      <q-list class="root">
-        <q-item to="/music/file" :append="true">
-          <q-item-section class="icon-folder">
-            <q-icon name="fas fa-play" />
-          </q-item-section>
-          <q-item-section> Play </q-item-section>
-        </q-item>
-      </q-list>
+  <q-layout view="hHh lpR fFf">
+    <q-drawer v-model="left" :width="150" side="left">
+      <div class="root">
+        <div class="folders">
+          <q-list>
+            <q-item to="/music" :append="true">
+              <q-item-section class="icon-player">
+                <q-icon name="fas fa-play" />
+              </q-item-section>
+              <q-item-section>Player</q-item-section>
+            </q-item>
+
+            <q-item to="/music/file" :append="true">
+              <q-item-section class="icon-folder">
+                <q-icon name="fas fa-folder" />
+              </q-item-section>
+              <q-item-section>Folders</q-item-section>
+            </q-item>
+
+            <q-item to="/music/youtube" :append="true">
+              <q-item-section class="icon-youtube">
+                <q-icon name="fab fa-youtube" />
+              </q-item-section>
+              <q-item-section>Youtube</q-item-section>
+            </q-item>
+          </q-list>
+        </div>
+        <div class="navigation column justify-end">
+          <div class="col-4">
+            <q-list class="navigation-list">
+              <q-item to="/music/youtube" :append="true">
+                <q-item-section>
+                  <q-icon name="fas fa-arrow-left" />
+                </q-item-section>
+                <q-item-section>Back</q-item-section>
+              </q-item>
+            </q-list>
+          </div>
+        </div>
+      </div>
     </q-drawer>
 
     <q-page-container>
@@ -22,7 +52,7 @@ export default {
   name: "MusicLayout",
   data() {
     return {
-      leftDrawer: true
+      left: true
     };
   },
   beforeMount() {
@@ -32,11 +62,22 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.root{
-  height 100%
-  background-color hsla(0,100%,0%,0.5)
-  color white
+  .root{
+    color white
+    background-color hsla(0,100%,0%,0.5)
+    height 100%
+  }
+ .folders{
+  height 80%
+
 }
+  .navigation{
+    height 20%
+    align-items: bottom
+  }
+    .navigation-list{
+      align-items: bottom
+    }
 .sources{
   height 80%
 }
@@ -54,7 +95,9 @@ export default {
 .icon-youtube{
   color: red
 }
-
+.icon-player{
+  color green
+}
 
 .buttons:after{
   height 40px
@@ -66,5 +109,4 @@ export default {
   white-space: nowrap;
   overflow: hidden;
 }
-
 </style>

@@ -4,21 +4,21 @@
       <div class="root">
         <div class="folders">
           <q-list>
-            <q-item to="/music" :append="true">
+            <q-item to="/music" active-class="menu-link">
               <q-item-section class="icon-player">
                 <q-icon name="fas fa-play" />
               </q-item-section>
               <q-item-section>Player</q-item-section>
             </q-item>
 
-            <q-item to="/music/file" :append="true">
+            <q-item to="/music/folders" active-class="menu-link">
               <q-item-section class="icon-folder">
                 <q-icon name="fas fa-folder" />
               </q-item-section>
               <q-item-section>Folders</q-item-section>
             </q-item>
 
-            <q-item to="/music/youtube" :append="true">
+            <q-item to="/music/youtube" active-class="menu-link">
               <q-item-section class="icon-youtube">
                 <q-icon name="fab fa-youtube" />
               </q-item-section>
@@ -29,7 +29,7 @@
         <div class="navigation column justify-end">
           <div class="col-4">
             <q-list class="navigation-list">
-              <q-item to="/music/youtube" :append="true">
+              <q-item to="/" active="false" active-class="menu-link-bug">
                 <q-item-section>
                   <q-icon name="fas fa-arrow-left" />
                 </q-item-section>
@@ -98,7 +98,12 @@ export default {
 .icon-player{
   color green
 }
-
+.menu-link{
+  background-color hsla(0,100%,0%,0.4)
+}
+  .menu-link-bug{
+    color: white
+  }
 .buttons:after{
   height 40px
 }

@@ -10,7 +10,11 @@
         </div>
       </div>
       <div class="row  justify-center" v-if="showArtists">
-        <div class="col-2 layout" v-for="artist in artistList">
+        <div
+          class="col-2 layout"
+          v-for="artist in artistList"
+          v-bind:key="artist.id"
+        >
           <q-card>
             <q-card-media overlay-position="top">
               <img
@@ -30,7 +34,7 @@
         </div>
       </div>
       <div class="row  justify-center" v-if="showAlbums">
-        <div class="col-2 layout" v-for="album in albumList">
+        <div class="col-2 layout" v-for="album in albumList" v-bind:key="album.id">
           <q-card>
             <router-link class="albumImg" to="/music/player">
               <q-card-media overlay-position="top">

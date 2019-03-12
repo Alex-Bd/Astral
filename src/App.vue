@@ -20,6 +20,6 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=1953&q=80");
   background-position: center;
   background-size: cover;
-  color: white;
+  color: black;
 }
 </style>

@@ -2,7 +2,12 @@
   <div class="doc-container">
     <div class="row items-center progress-bar">
       <div class="col">
-        <q-Slider v-model="songProgress" :min="0" :max="100" :step="1"></q-Slider>
+        <q-Slider
+          v-model="songProgress"
+          :min="0"
+          :max="100"
+          :step="1"
+        ></q-Slider>
       </div>
     </div>
 
@@ -23,7 +28,13 @@
         <q-icon name="fas fa-redo" :color="loopButton" size="2vh"></q-icon>
       </div>
       <div class="col-6">
-        <q-Slider v-model="volumeSlider" :min="0" :max="1" :step="0.01" label></q-Slider>
+        <q-Slider
+          v-model="volumeSlider"
+          :min="0"
+          :max="1"
+          :step="0.01"
+          label
+        ></q-Slider>
       </div>
       <div class="col-3" @click="toggleRandom">
         <q-icon name="fas fa-random" :color="randomButton" size="2vh"></q-icon>

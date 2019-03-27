@@ -7,9 +7,9 @@ const routes = [
   {
     path: "/music",
     component: () => import("layouts/MusicLayout.vue"),
-    children: [{ path: "/", component: () => import("components/music/ArtistComponent.vue") },
-               { path: "/", component: () => import("components/music/ArtistComponent.vue") },
-               { path: "/", component: () => import("components/music/ArtistComponent.vue") }
+    children: [{ path: "/music/folders", component: () => import("components/Music/FolderComponent.vue") },
+               { path: "/music/youtube", component: () => import("components/Music/FolderComponent.vue") },
+               { path: "/", component: () => import("components/Music/PlayerComponent.vue") }
     ]
   }
 

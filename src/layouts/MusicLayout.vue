@@ -1,34 +1,38 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="lHh LpR fFf">
     <q-drawer v-model="left" :width="150" side="left">
-      <div class="root">
-        <div class="folders">
-          <q-list>
+      <div class="column drawer">
+        <div class="col">
+          <q-list dark>
             <q-item to="/music" active-class="menu-link">
               <q-item-section class="icon-player">
-                <q-icon name="fas fa-play" />
+                <q-icon name="fas fa-play"></q-icon>
               </q-item-section>
               <q-item-section>Player</q-item-section>
             </q-item>
 
-            <q-item to="/music/folders" active-class="menu-link">
+            <q-item
+              to="/music/folders"
+              active-class="menu-link"
+              class="list-item"
+            >
               <q-item-section class="icon-folder">
-                <q-icon name="fas fa-folder" />
+                <q-icon name="fas fa-folder"></q-icon>
               </q-item-section>
               <q-item-section>Folders</q-item-section>
             </q-item>
-
             <q-item to="/music/youtube" active-class="menu-link">
               <q-item-section class="icon-youtube">
-                <q-icon name="fab fa-youtube" />
+                <q-icon name="fab fa-youtube"></q-icon>
               </q-item-section>
               <q-item-section>Youtube</q-item-section>
             </q-item>
           </q-list>
         </div>
-        <div class="navigation column justify-end">
-          <div class="col-4">
-            <q-list class="navigation-list">
+        
+        <div class="row">
+          <div class="col">
+            <q-list>
               <q-item to="/" active="false" active-class="menu-link-bug">
                 <q-item-section>
                   <q-icon name="fas fa-arrow-left" />
@@ -44,6 +48,12 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer class="footer">
+      <q-toolbar>
+        <q-toolbar-title>Footeasddddddddddddddr</q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -62,52 +72,36 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-  .root{
-    color white
-    background-color hsla(0,100%,0%,0.5)
-    height 100%
-    overflow hidden
-  }
- .folders{
-  height 80%
+.footer
+  height 5em
+  background-color hsla(120, 100%, 0%, 0.6)
 
-}
-  .navigation{
-    height 20%
-    align-items: bottom
-  }
-    .navigation-list{
-      align-items: bottom
-    }
-.sources{
-  height 80%
-}
-.back{
-  height 20%
-}
- .list-col{
-   height: 100%
-   border: 0
-   padding: 0
-  }
-.icon-folder{
+.drawer
+  background-color hsla(120, 100%, 0%, 0.6)
+  height 100%
+
+.back
+  display flex
+  flex-direction column
+
+.icon-folder
   color: #ffd005
-}
-.icon-youtube{
+
+.icon-youtube
   color: red
-}
-.icon-player{
+
+.icon-player
   color green
-}
-.menu-link{
+
+.menu-link
   background-color hsla(0,100%,0%,0.4)
-}
-  .menu-link-bug{
-    color: white
-  }
-.buttons:after{
+
+.menu-link-bug
+  color: white
+
+.buttons:after
   height 40px
-}
+
 .text{
   text-overflow: ellipsis;
 

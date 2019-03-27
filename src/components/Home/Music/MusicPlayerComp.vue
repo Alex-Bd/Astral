@@ -10,7 +10,7 @@
         >
           <div>
             <q-list :no-border="true" highlight>
-              <q-item link to="music/file">
+              <q-item link to="music/">
                 <q-item-section>
                   Folders
                 </q-item-section>

@@ -6,7 +6,8 @@
           fit
           anchor="top middle"
           self="bottom middle"
-          content-class="bg-black text-white">
+          content-class="bg-black text-white"
+        >
           <div>
             <q-list :no-border="true" highlight>
               <q-item link to="music/file">
@@ -30,9 +31,10 @@
       </q-btn>
     </div>
 
-    <div class="col self-center header">
+    <div class="col header">
       Now playing
     </div>
+
     <q-img
       class="picture"
       :src="url"
@@ -40,10 +42,10 @@
       :contain="true"
     ></q-img>
 
-    <div class="col song-title self-center">
+    <div class="col song-title">
       asdasd
     </div>
-    <div class="col artist-album text-center">
+    <div class="col artist-album">
       asdas asdasdas
     </div>
   </div>
@@ -75,7 +77,8 @@ export default {
 
 .header
   color white
-  height $playerHeight*0.08 em
+  font-size 1em
+  height $playerHeight*0.15 em
 
 .picture
   height $playerHeight*0.6 em
@@ -83,6 +86,7 @@ export default {
 .song-title
   height $playerHeight*0.1 em
   color white
+  font-size 1em
 
 .artist-album
   height $playerHeight*0.1 em

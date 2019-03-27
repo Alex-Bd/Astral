@@ -1,40 +1,52 @@
 <template>
-  <div class="column">
-      <div class="col progress-bar self-center">
-        <q-Slider
-          v-model="songProgress"
-          :min="0"
-          :max="100"
-          :step="1"
-        ></q-Slider>
-      </div>
+  <div class="column control-size">
+    <div class="progress-bar self-center">
+      <q-Slider
+        dense
+        v-model="songProgress"
+        :min="0"
+        :max="100"
+        :step="1"
+      ></q-Slider>
+    </div>
 
-    <div class="row controls text-center">
-      <div class="col ">
-        <q-icon name="fas fa-step-backward" color="white" size="1.5em"></q-icon>
+    <div class="row controls text-center items-center">
+      <div class="col">
+        <q-icon
+          name="fas fa-step-backward"
+          color="white"
+          class="control-icons"
+        ></q-icon>
       </div>
       <div class="col" @click="PlayPause">
-        <q-icon :name="playButton" color="white" size="2em"></q-icon>
+        <q-icon :name="playButton" color="white" class="play-icon"></q-icon>
       </div>
       <div class="col">
-        <q-icon name="fas fa-step-forward" color="white" size="1.5em"></q-icon>
+        <q-icon
+          name="fas fa-step-forward"
+          color="white"
+          class="control-icons"
+        ></q-icon>
       </div>
     </div>
 
     <div class="row volume-and-misc text-center">
       <div class="col self-center" @click="toggleLoop">
-        <q-icon name="fas fa-redo" :color="loopButton" size="2vh"></q-icon>
+        <q-icon
+          name="fas fa-redo"
+          :color="loopButton"
+          class="misc-icons"
+        ></q-icon>
       </div>
       <div class="col self-center">
-        <q-slider
-          v-model="volumeSlider"
-          :min="0"
-          :max="100"
-          label
-        ></q-slider>
+        <q-slider v-model="volumeSlider" :min="0" :max="100" label></q-slider>
       </div>
       <div class="col self-center" @click="toggleRandom">
-        <q-icon name="fas fa-random" :color="randomButton" size="2vh"></q-icon>
+        <q-icon
+          name="fas fa-random"
+          :color="randomButton"
+          class="misc-icons"
+        ></q-icon>
       </div>
     </div>
   </div>
@@ -116,15 +128,26 @@ export default {
 <style scoped lang="stylus">
   @import "./../../../css/Home/Music/MusicVariables.styl"
 
+.control-size
+  height $controllerHeight em
+
 .progress-bar
-  height $controllerHeight*0.4 em
+  height $controllerHeight*0.2 em
   width  $controllerWidth*0.9 em
 
 .controls
-  height $controllerHeight*0.3 em
+  height $controllerHeight*0.4 em
   width  $controllerWidth em
+
 .volume-and-misc
   height $controllerHeight*0.3 em
   width  $controllerWidth em
 
+.misc-icons
+  font-size $controllerHeight*0.13 em
+
+.play-icon
+  font-size $controllerHeight*0.27 em
+.control-icons
+  font-size $controllerHeight*0.2 em
 </style>

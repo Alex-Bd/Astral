@@ -48,11 +48,11 @@ export default {
 
 .player
   width $playerWidth em
-  height $playerWidth em
+  height $playerHeight em
 .controller
   width $controllerWidth em
   height $controllerHeight em
 .list
   width $listWidth em
-  height $listWidth em
+  height $listHeight em
 </style>

@@ -77,12 +77,12 @@ export default {
 <style scoped lang="stylus">
 @import "./../css/Music/Music.styl"
 .footer
-  height $footerHeight em
+  height 10vh
   background-color hsla(120, 100%, 0%, 0.6)
 
 .drawer
   background-color hsla(120, 100%, 0%, 0.6)
-  height 100%
+  height 90vh
 
 .icon-folder
   color: #ffd005
@@ -99,8 +99,6 @@ export default {
 .menu-link-bug
   color: white
 
-.buttons:after
-  height 40px
 
 .text{
   text-overflow: ellipsis;

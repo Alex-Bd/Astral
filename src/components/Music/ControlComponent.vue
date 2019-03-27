@@ -72,7 +72,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import "./../../css/Music/Music.styl"
 
 .image
   margin-left 1%

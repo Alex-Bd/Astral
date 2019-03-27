@@ -1,6 +1,6 @@
 <template>
-  <q-page class="background">
-    <div class="row">
+  <q-page>
+    <div class="row background">
       <div class="col">
         <q-list dark>
           <q-item clickable v-ripple :active="active">
@@ -13,6 +13,7 @@
         </q-list>
       </div>
       <div class="col-3">
+        <q-scroll-area style="height:90vh;">
         <q-list dark>
           <q-item clickable v-ripple :active="active">
             <q-item-section>
@@ -24,7 +25,20 @@
             </q-item-section>
             <q-item-section>Legends Never Die</q-item-section>
           </q-item>
+          <q-item clickable v-ripple :active="active">
+            <q-item-section>
+              <q-img
+                src="https://i.imgur.com/eukJn7L.jpg"
+                class="album-img"
+                :ratio="1"
+              ></q-img>
+            </q-item-section>
+            <q-item-section>Legends Never Die</q-item-section>
+          </q-item>
+
+
         </q-list>
+        </q-scroll-area>
       </div>
     </div>
   </q-page>

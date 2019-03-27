@@ -1,8 +1,8 @@
 <template>
-  <q-page>
+  <q-page class="background">
     <div class="row">
       <div class="col">
-        <q-list bordered dark>
+        <q-list dark>
           <q-item clickable v-ripple :active="active">
             <q-item-section side>1</q-item-section>
             <q-item-section>Legends Never Die</q-item-section>
@@ -13,7 +13,7 @@
         </q-list>
       </div>
       <div class="col-3">
-        <q-list bordered dark>
+        <q-list dark>
           <q-item clickable v-ripple :active="active">
             <q-item-section>
               <q-img
@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@import "./../../css/Music/Music.styl"
 
 .album-img
   height 10em

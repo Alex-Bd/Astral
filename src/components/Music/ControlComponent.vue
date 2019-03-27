@@ -91,4 +91,6 @@ export default {
 .volume
   width 10%
   margin-right 1%
+
+
 </style>

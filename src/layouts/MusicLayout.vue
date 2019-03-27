@@ -56,17 +56,17 @@
 </template>
 
 <script>
-  import Control from "../components/Music/ControlComponent"
+import Control from "../components/Music/ControlComponent";
 export default {
   name: "MusicLayout",
-  components: {Control},
-  component:{
+  components: { Control },
+  component: {
     Control
   },
   data() {
     return {
       left: true
-    }
+    };
   },
   beforeMount() {
     //this.$store.dispatch("musicStore/music/loadMusicList")

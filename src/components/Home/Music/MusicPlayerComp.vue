@@ -1,15 +1,12 @@
 <template>
   <div class="column items-center">
-
     <div class="self-start menu">
       <q-btn flat icon="fas fa-bars" class="menu-btn" size="sm">
         <q-menu
-        
           fit
           anchor="top middle"
           self="bottom middle"
-          content-class="bg-black text-white"
-        >
+          content-class="bg-black text-white">
           <div>
             <q-list :no-border="true" highlight>
               <q-item link to="music/file">

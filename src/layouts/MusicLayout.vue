@@ -84,10 +84,6 @@ export default {
   background-color hsla(120, 100%, 0%, 0.6)
   height 100%
 
-.back
-  display flex
-  flex-direction column
-
 .icon-folder
   color: #ffd005
 

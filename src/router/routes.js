@@ -6,8 +6,14 @@ const routes = [
   },
   {
     path: "/music",
-    component: () => import("layouts/MusicLayout.vue")
+    component: () => import("layouts/MusicLayout.vue"),
+    children: [{ path: "/", component: () => import("components/music/ArtistComponent.vue") },
+               { path: "/", component: () => import("components/music/ArtistComponent.vue") },
+               { path: "/", component: () => import("components/music/ArtistComponent.vue") }
+    ]
   }
+
+
 ];
 
 // Always leave this as last one

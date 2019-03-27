@@ -1,7 +1,7 @@
 <!--suppress JSUnusedAssignment -->
 <template>
   <div class="">
-    <div class="size" ref="weatherTileScroll" v-on:wheel="horizontalScrolling">
+    <div class="size background" ref="weatherTileScroll" v-on:wheel="horizontalScrolling">
       <div class="row items-center scroll">
         <div
           v-for="weather in weather"
@@ -90,9 +90,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
+  @import "./../../css/Home/Home.styl"
 .size {
-  background-color: hsla(120, 100%, 0%, 0.6);
   width: 38em;
   height: 9em;
   overflow-y: auto;

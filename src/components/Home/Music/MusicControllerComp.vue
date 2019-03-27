@@ -1,7 +1,6 @@
 <template>
-  <div class="doc-container">
-    <div class="row items-center progress-bar">
-      <div class="col">
+  <div class="column">
+      <div class="col progress-bar self-center">
         <q-Slider
           v-model="songProgress"
           :min="0"
@@ -9,10 +8,9 @@
           :step="1"
         ></q-Slider>
       </div>
-    </div>
 
-    <div class="row items-center controls">
-      <div class="col">
+    <div class="row controls text-center">
+      <div class="col ">
         <q-icon name="fas fa-step-backward" color="white" size="1.5em"></q-icon>
       </div>
       <div class="col" @click="PlayPause">
@@ -23,26 +21,20 @@
       </div>
     </div>
 
-    <div class="row items-center volume-and-misc">
-      <div class="col-3" @click="toggleLoop">
+    <div class="row volume-and-misc text-center">
+      <div class="col self-center" @click="toggleLoop">
         <q-icon name="fas fa-redo" :color="loopButton" size="2vh"></q-icon>
       </div>
-      <div class="col-6">
-        <q-Slider
+      <div class="col self-center">
+        <q-slider
           v-model="volumeSlider"
           :min="0"
-          :max="1"
-          :step="0.01"
+          :max="100"
           label
-        ></q-Slider>
+        ></q-slider>
       </div>
-      <div class="col-3" @click="toggleRandom">
+      <div class="col self-center" @click="toggleRandom">
         <q-icon name="fas fa-random" :color="randomButton" size="2vh"></q-icon>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <q-icon name="fas fa-chevron-down" color="white" size="0.5em"></q-icon>
       </div>
     </div>
   </div>
@@ -121,17 +113,18 @@ export default {
 };
 </script>
 
-<style scoped>
-.progress-bar {
-  height: 2em;
-  width: 95%;
-}
+<style scoped lang="stylus">
+  @import "./../../../css/Home/Music/MusicVariables.styl"
 
-.controls {
-  height: 3em;
-}
+.progress-bar
+  height $controllerHeight*0.4 em
+  width  $controllerWidth*0.9 em
 
-.volume-and-misc {
-  height: 2em;
-}
+.controls
+  height $controllerHeight*0.3 em
+  width  $controllerWidth em
+.volume-and-misc
+  height $controllerHeight*0.3 em
+  width  $controllerWidth em
+
 </style>

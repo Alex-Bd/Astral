@@ -66,6 +66,7 @@ export default {
     color white
     background-color hsla(0,100%,0%,0.5)
     height 100%
+    overflow hidden
   }
  .folders{
   height 80%

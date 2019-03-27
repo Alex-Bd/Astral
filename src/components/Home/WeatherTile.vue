@@ -1,7 +1,11 @@
 <!--suppress JSUnusedAssignment -->
 <template>
   <div class="">
-    <div class="size background" ref="weatherTileScroll" v-on:wheel="horizontalScrolling">
+    <div
+      class="size background"
+      ref="weatherTileScroll"
+      v-on:wheel="horizontalScrolling"
+    >
       <div class="row items-center scroll">
         <div
           v-for="weather in weather"
@@ -94,28 +98,27 @@ export default {
   @import "./../../css/Home/Weather/WeatherVariables.styl"
   @import "./../../css/Home/Home.styl"
 
-.size {
-  width: $width em;
-  height: $height em;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
+.size
+  width: $width em
+  height: $height em
+  overflow-y: auto
+  overflow-x: hidden
+
 .cond-icon
   font-size $width*0.1 em
 
 .status-icon
   font-size $width*0.035 em
 
+.day-slot
+  width: $width * (1 / 3) em
+  text-align: center
 
-.day-slot {
-  width: $width * (1 / 3) em;
-  text-align: center;
-}
-.scroll {
-  width: $width * (1 / 3) * 41 em;
-  height: $height;
-}
-.temp {
+.scroll
+  width: $width * (1 / 3) * 41 em
+  height: $height
+
+.temp
   margin-left: 10px;
-}
+
 </style>

@@ -29,7 +29,7 @@
             </q-item>
           </q-list>
         </div>
-        
+
         <div class="row">
           <div class="col">
             <q-list>
@@ -50,20 +50,23 @@
     </q-page-container>
 
     <q-footer class="footer">
-      <q-toolbar>
-        <q-toolbar-title>Footeasddddddddddddddr</q-toolbar-title>
-      </q-toolbar>
+      <Control></Control>
     </q-footer>
   </q-layout>
 </template>
 
 <script>
+  import Control from "../components/Music/ControlComponent"
 export default {
   name: "MusicLayout",
+  components: {Control},
+  component:{
+    Control
+  },
   data() {
     return {
       left: true
-    };
+    }
   },
   beforeMount() {
     //this.$store.dispatch("musicStore/music/loadMusicList")
@@ -72,8 +75,9 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@import "./../css/Music/Music.styl"
 .footer
-  height 5em
+  height $footerHeight em
   background-color hsla(120, 100%, 0%, 0.6)
 
 .drawer

@@ -1,7 +1,7 @@
 <template>
   <div class="column items-center">
     <div class="self-start menu">
-      <q-btn flat icon="fas fa-bars" class="menu-btn" size="sm">
+      <q-btn flat icon="fas fa-bars" class="menu-btn" color="white" size="sm">
         <q-menu
           fit
           anchor="top middle"

@@ -10,8 +10,12 @@
 </template>
 
 <script>
+  import Background from "./pages/background-process"
 export default {
-  name: "App"
+  name: "App",
+  components:{
+    Background
+  }
 };
 </script>
 

@@ -1,19 +1,22 @@
 import types from "./../../../types";
 
 const actions = {
-  [types.music.player.start]: ({ commit }) => {
-    commit(types.music.player.setPlay, {
-      action: "play",
-      button: "fas fa-pause"
-    });
+  [types.music.player.togglePlay]: ({ commit, getters }) => {
+    if (getters["player/getPlay"])
+      commit(types.music.player.setPlay, {
+        action: "play",
+        button: "fas fa-pause"
+      });
+    else
+      commit(types.music.player.setPlay, {
+        action: "pause",
+        button: "fas fa-play"
+      });
   },
-  [types.music.player.stop]: ({ commit }) => {
-    commit(types.music.player.setPlay, {
-      action: "pause",
-      button: "fas fa-play"
-    });
-  },
-
+  [types.music.player.changeProgress]: ({ commit }, payload) => {
+    commit(types.music.player.setProgress, payload);
+  }
+  ,
   [types.music.player.toggleRandom]: ({ commit }, payload) => {
     commit(types.music.player.setRandom, payload);
   },
@@ -23,7 +26,6 @@ const actions = {
   [types.music.player.changeVolume]: ({ commit }, payload) => {
     commit(types.music.player.setVolume, payload);
   },
-
   [types.music.player.changeCurrentAlbum]: ({ commit, getters }, payload) => {
     commit(
       types.music.player.setCurrentAlbum,

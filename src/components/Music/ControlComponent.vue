@@ -11,22 +11,17 @@
     </div>
 
     <div class="row text-center items-center buttons">
-      <div class="col">
-        <q-icon
-          name="fas fa-step-backward"
-          color="white"
-          class="control-icons"
-        ></q-icon>
+      <div class="col" >
+        <q-btn icon="fas fa-step-backward"></q-btn>
       </div>
       <div class="col">
-        <q-icon name="fas fa-play" color="white" class="play-icon"></q-icon>
+        <q-btn @click="play" :icon="playButton" class="play-icon"></q-btn>
       </div>
       <div class="col">
-        <q-icon
-          name="fas fa-step-forward"
-          color="white"
+        <q-btn
+          icon="fas fa-step-forward"
           class="control-icons"
-        ></q-icon>
+        ></q-btn>
       </div>
     </div>
     <div class="row progress-bar">
@@ -34,7 +29,9 @@
       <div class="col current-time">
         <q-Slider
           dense
-          v-model="songProgress"
+          :value="songProgress"
+          @input="changeProgress"
+          @change="changeProgress"
           :min="0"
           :max="100"
           :step="1"
@@ -49,7 +46,9 @@
       <div class="col-10">
         <q-Slider
           dense
-          v-model="volume"
+          :value="volume"
+          @input="changeVolume"
+          @change="changeVolume"
           :min="0"
           :max="100"
           :step="1"
@@ -60,13 +59,32 @@
 </template>
 
 <script>
+import types from "./../../store/types"
+import { mapState, mapMutations} from "vuex";
+
 export default {
   name: "ControlComponent",
-  data() {
-    return {
-      songProgress: 0,
-      volume: 0
-    };
+  computed: {
+    ...mapState({
+      playButton: state => state.musicStore.player.playButton,
+      songProgress: state => state.musicStore.player.progress,
+      volume: state => state.musicStore.player.volume,
+      loop: state => state.musicStore.player.loop,
+      random: state => state.musicStore.player.random
+    }),
+  ...mapMutations({setSongProgress:"musicStore/" + types.music.player.changeProgress}),
+  },
+  methods:{
+    play: function () {
+      this.$store.dispatch("musicStore/" + types.music.player.togglePlay);
+    },
+    changeProgress: function (value) {
+      this.$store.dispatch("musicStore/" + types.music.player.changeProgress,value);
+    },
+    changeVolume: function (value) {
+      this.$store.dispatch("musicStore/" + types.music.player.changeVolume,value);
+    }
+
   }
 };
 </script>

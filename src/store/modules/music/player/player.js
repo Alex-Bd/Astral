@@ -6,7 +6,7 @@ const state = {
   play: false,
   playButton: "fas fa-play",
   progress: 0,
-  progressMax: 0,
+  progressMax: 0, //duration
   volume: 1,
   loop: false,
   random: false

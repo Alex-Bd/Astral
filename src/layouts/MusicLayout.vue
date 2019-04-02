@@ -4,7 +4,7 @@
       <div class="column drawer">
         <div class="col">
           <q-list dark>
-            <q-item to="/music" active-class="menu-link">
+            <q-item to="/music" :active=false active-class="menu-link">
               <q-item-section class="icon-player">
                 <q-icon name="fas fa-play"></q-icon>
               </q-item-section>
@@ -14,6 +14,7 @@
             <q-item
               to="/music/folders"
               active-class="menu-link"
+              :active=false
               class="list-item"
             >
               <q-item-section class="icon-folder">
@@ -21,7 +22,7 @@
               </q-item-section>
               <q-item-section>Folders</q-item-section>
             </q-item>
-            <q-item to="/music/youtube" active-class="menu-link">
+            <q-item to="/music/youtube" :active=false active-class="menu-link">
               <q-item-section class="icon-youtube">
                 <q-icon name="fab fa-youtube"></q-icon>
               </q-item-section>
@@ -33,7 +34,7 @@
         <div class="row">
           <div class="col">
             <q-list>
-              <q-item to="/" active="false" active-class="menu-link-bug">
+              <q-item to="/" :active=false active-class="menu-link-bug">
                 <q-item-section>
                   <q-icon name="fas fa-arrow-left" />
                 </q-item-section>

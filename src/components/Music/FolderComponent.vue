@@ -1,110 +1,36 @@
 <template>
   <q-page>
-  <div class="root">
-    <div class="row ">
+    <div class="root background">
+      <div class="row">
+        <div class="col-10 folder">
+          <div class="row">
+            <div class="col-2">
+              <q-card class="my-card">
+                <q-img
+                  src="https://cdn.quasar-framework.org/img/mountains.jpg"
+                  class="albumImg"
+                  :ratio="1"
+                ></q-img>
+                <q-card-section>
+                  <div class="text-h6">Text</div>
+                </q-card-section>
+              </q-card>
+            </div>
+          </div>
+        </div>
 
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
+        <div class="col-2 toolbar">
+          <q-list dark>
+            <q-item clickable v-ripple>
+              <q-item-section color="white">Icon as avatar</q-item-section>
+              <q-item-section side>
+                <q-btn flat icon="fas fa-plus"/>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </div>
       </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-      <div class="col-2">
-    <q-card class="my-card">
-      <q-img
-        src="https://cdn.quasar-framework.org/img/mountains.jpg"
-        :ratio="1"
-      ></q-img>
-      <q-card-section>
-        <div class="text-h6">Text</div>
-      </q-card-section>
-
-      <q-card-section> </q-card-section>
-    </q-card>
-      </div>
-
-
-
     </div>
-  </div>
   </q-page>
 </template>
 
@@ -114,7 +40,7 @@ export default {
   name: "MusicFolder",
   data() {
     return {
-      artistList: [],
+      artistList: []
     };
   },
   //parse vs recalculate from store.. prefer memory usage rather than CPU load
@@ -123,8 +49,7 @@ export default {
       artists: state => state.musicStore.music.music
     })
   },
-  methods: {
-  },
+  methods: {},
   beforeMount() {
     for (let artist in this.artists) {
       this.artistList.push(this.artists[artist].name);
@@ -134,9 +59,16 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+  @import "./../../css/Music/Music.styl"
 .root{
-padding 10px
+  height 90vh
 }
+.folder
+  height 10em
+
+.toolbar
+  border-left black 2px solid
+  height 90vh
 
 .label{
   color white
@@ -154,6 +86,7 @@ padding 10px
   height 40px
 }
 .albumImg{
-  height inherit
+  height 100px
+  width 100px
 }
 </style>

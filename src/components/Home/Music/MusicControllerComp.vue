@@ -3,7 +3,9 @@
     <div class="progress-bar self-center">
       <q-Slider
         dense
-        v-model="songProgress"
+        :value="songProgress"
+        @input="setProgress"
+        @change="setProgress"
         :min="0"
         :max="100"
         :step="1"
@@ -39,7 +41,7 @@
         ></q-icon>
       </div>
       <div class="col self-center">
-        <q-slider v-model="volumeSlider" :min="0" :max="100" label></q-slider>
+        <q-slider :value="volume" :min="0" :max="100" label></q-slider>
       </div>
       <div class="col self-center" @click="toggleRandom">
         <q-icon
@@ -62,7 +64,6 @@ export default {
     return {
       loopButton: "white",
       randomButton: "white",
-      volumeSlider: 1
     };
   },
   computed: {
@@ -78,10 +79,10 @@ export default {
   methods: {
     PlayPause: function() {
       if (this.play === "pause") {
-        this.$store.dispatch("musicStore/" + types.music.player.start);
-      } else {
-        this.$store.dispatch("musicStore/" + types.music.player.stop);
-      }
+        this.$store.dispatch("musicStore/" + types.music.player.togglePlay);
+    }},
+    setProgress: function (value) {
+      this.$store.dispatch("musicStore/" + types.music.player.changeProgress,value);
     },
     toggleLoop: function() {
       if (this.loopButton === "white") {

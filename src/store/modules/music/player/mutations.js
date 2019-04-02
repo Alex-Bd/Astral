@@ -28,7 +28,12 @@ const mutations = {
   },
   [types.music.player.setVolume]: (state, payload) => {
     state.volume = payload;
+  },
+   [types.music.player.setProgress]: (state, payload) => {
+    state.progress = payload;
   }
+
+
 };
 
 export default mutations;

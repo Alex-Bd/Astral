@@ -3,7 +3,7 @@
     <div class="row background">
       <div class="col">
         <q-list dark>
-          <q-item clickable v-ripple :active="active">
+          <q-item clickable v-ripple :active=true>
             <q-item-section side>1</q-item-section>
             <q-item-section>Legends Never Die</q-item-section>
             <q-item-section>Season 2017</q-item-section>
@@ -15,7 +15,7 @@
       <div class="col-3">
         <q-scroll-area style="height:90vh;">
         <q-list dark>
-          <q-item clickable v-ripple :active="active">
+          <q-item clickable v-ripple :active=true>
             <q-item-section>
               <q-img
                 src="https://i.imgur.com/eukJn7L.jpg"
@@ -25,7 +25,7 @@
             </q-item-section>
             <q-item-section>Legends Never Die</q-item-section>
           </q-item>
-          <q-item clickable v-ripple :active="active">
+          <q-item clickable v-ripple :active=true>
             <q-item-section>
               <q-img
                 src="https://i.imgur.com/eukJn7L.jpg"

@@ -42,11 +42,11 @@ export default {
       setRandom: "player/setRandom",
       setVolume: "player/setVolume",
       //Actions
-      start: "player/start",
-      stop: "player/stop",
+      togglePlay: "player/togglePlay",
       toggleLoop: "player/toggleLoop",
       toggleRandom: "player/toggleRandom",
       changeVolume: "player/changeVolume",
+      changeProgress: "player/changeProgress",
 
       getMetaData: "player/getMetaData",
       changeCurrentAlbum: "player/changeCurrentAlbum",

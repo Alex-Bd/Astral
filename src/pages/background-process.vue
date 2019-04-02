@@ -5,7 +5,7 @@
 <script>
 import { mapState } from "vuex";
 export default {
-  name: "background-process",
+  name: "background",
   computed: {
     ...mapState({
       play: state => state.musicStore.player.play,

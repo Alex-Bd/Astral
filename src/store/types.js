@@ -1,5 +1,5 @@
 export default {
-  domain: "35.204.97.47:8070",
+  domain: "http://35.204.97.47:8070",
 
   time: {
     //Getters
